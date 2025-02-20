@@ -5,7 +5,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   build: {
     lib: {
-      entry: "./src/main.jsx",
+      entry: "./src/index.jsx",
       name: "MyLibrary",
       fileName: (format) => `my-library.${format}.js`,
     },
