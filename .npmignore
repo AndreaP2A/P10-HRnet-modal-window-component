@@ -1,0 +1,5 @@
+src/
+public/
+*.config.js
+*.config.json
+*.md
