@@ -2,4 +2,4 @@ src/
 public/
 *.config.js
 *.config.json
-*.md
+node_modules/
