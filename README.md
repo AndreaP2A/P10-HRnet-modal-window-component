@@ -2,7 +2,7 @@
 
 This library provides a simple and reusable modal window component built with React and Vite. The modal window is designed to be used as a "success" modal, which can be displayed when a form is completed, a button is clicked, or any other event that requires user feedback !
 
-# Modal Component
+# Context
 
 It was made for a [student project](https://github.com/AndreaP2A/P10-HRnet-React), where an old [jQuery app](https://github.com/OpenClassrooms-Student-Center/P12_Front-end) was to be "converted into" a React one and its subsequent components were to be converted as well. Out of the 4 major components, the modal window was the one I chose to work on, to implement and to publish separately as well, the remaining ones being popular libraries that I imported.
 
