@@ -18,7 +18,7 @@ It was made for a [student project](https://github.com/AndreaP2A/P10-HRnet-React
 To install the modal component, you can use npm:
 
 ```sh
-npm install modal-window
+npm install modal-window-ap2a
 ```
 
 ## Usage
@@ -27,8 +27,8 @@ Here is an example of how to use the modal component in your React project:
 
 ```jsx
 import React, { useState } from "react";
-import { Modal } from "modal-window";
-import "modal-window/dist/my-library.css"; // Adjust the path if necessary
+import { Modal } from "modal-window-ap2a";
+import "modal-window-ap2a/dist/my-library.css"; // Adjust the path if necessary
 
 const App = () => {
   const [showModal, setShowModal] = useState(false);
