@@ -1,10 +1,10 @@
 {
   "name": "modal-window-ap2a",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "type": "module",
-  "main": "dist/my-library.cjs.js",
-  "module": "dist/my-library.esm.js",
+  "main": "dist/my-library.umd.js",
+  "module": "dist/my-library.es.js",
   "files": [
     "dist"
   ],
