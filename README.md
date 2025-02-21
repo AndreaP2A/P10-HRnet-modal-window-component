@@ -28,7 +28,7 @@ Here is an example of how to use the modal component in your React project:
 ```jsx
 import React, { useState } from "react";
 import { Modal } from "modal-window-ap2a";
-import "modal-window-ap2a/dist/my-library.css"; // Adjust the path if necessary
+import "modal-window-ap2a/dist/modal-window-ap2a.css";
 
 const App = () => {
   const [showModal, setShowModal] = useState(false);
