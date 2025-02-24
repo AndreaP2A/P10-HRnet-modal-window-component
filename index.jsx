@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import "./modalwindow.css";
 
-const Modal = ({ show, onClose, children }) => {
+const Modal = ({ show, onClose, children, closeButton }) => {
   if (!show) {
     return null;
   }
@@ -9,6 +9,11 @@ const Modal = ({ show, onClose, children }) => {
   return (
     <div className="modal-overlay">
       <div className="modal">
+        {closeButton && (
+          <button onClick={onClose} className="modal-close-btn-x">
+            &times;
+          </button>
+        )}
         {children}
         <button onClick={onClose} className="modal-close-btn">
           Close

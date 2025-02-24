@@ -11,7 +11,7 @@ It was made for a [student project](https://github.com/AndreaP2A/P10-HRnet-React
 - Easy to integrate into any React project
 - Customizable content through children props
 - Simple show/hide functionality
-- Styled with CSS for a clean and modern look
+- Styled with CSS for a clean and modern look : modal is encapsulated in an overlay that you can customize !
 
 ## Installation
 
@@ -21,26 +21,33 @@ To install the modal component, you can use npm:
 npm install modal-window-ap2a
 ```
 
+It's already installed, but you need the last updated version ? Then just use :
+
+```sh
+npm update modal-window-ap2a
+```
+
 ## Usage
 
-Here is an example of how to use the modal component in your React project:
+Here is an example of how to use the modal component in your React project, with an example button to easily open that modal window :
 
 ```jsx
-import React, { useState } from "react";
-import { Modal } from "modal-window-ap2a";
-import "modal-window-ap2a/dist/modal-window-ap2a.css";
+import { useState } from "react";
+import Modal from "modal-window-ap2a";
+import "modal-window-ap2a/modalwindow.css";
 
 const App = () => {
   const [showModal, setShowModal] = useState(false);
 
+  const handleClose = () => {
+    setShowModal(false);
+  };
+
   return (
     <div>
-      <button onClick={() => setShowModal(true)}>
-        Show Success Modal Window
-      </button>
-      <Modal show={showModal} onClose={() => setShowModal(false)}>
-        <h1>Form Submitted Successfully!</h1>
-        <p>Your form has been submitted. Thank you!</p>
+      <button onClick={() => setShowModal(true)}>Show Modal</button>
+      <Modal show={showModal} onClose={handleClose}>
+        <h1>Hello, Modal!</h1>
       </Modal>
     </div>
   );
@@ -56,6 +63,7 @@ The Modal component accepts the following props:
 - show (boolean): Determines whether the modal is visible or not.
 - onClose (function): Callback function to handle closing the modal.
 - children (node): The content to be displayed inside the modal.
+- closeButton (boolean): Determines whether the close button is displayed. Default is true.
 
 ## CSS
 
@@ -84,5 +92,22 @@ You can customize the appearance of the modal by modifying the CSS file. Here is
 
 .modal-close-btn {
   margin-top: 10px;
+}
+
+.modal-close-btn-top-right {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 20px;
 }
 ```
