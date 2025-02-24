@@ -29,7 +29,7 @@ npm update modal-window-ap2a
 
 ## Usage
 
-Here is an example of how to use the modal component in your React project, with an example button to easily open that modal window :
+Here is an example of how to use the modal component in your React project, with a demo show button :
 
 ```jsx
 import { useState } from "react";
@@ -46,7 +46,12 @@ const App = () => {
   return (
     <div>
       <button onClick={() => setShowModal(true)}>Show Modal</button>
-      <Modal show={showModal} onClose={handleClose}>
+      <Modal
+        show={showModal}
+        onClose={handleClose}
+        closeButtonX={true}
+        closeButton={true}
+      >
         <h1>Hello, Modal!</h1>
       </Modal>
     </div>
@@ -63,51 +68,44 @@ The Modal component accepts the following props:
 - show (boolean): Determines whether the modal is visible or not.
 - onClose (function): Callback function to handle closing the modal.
 - children (node): The content to be displayed inside the modal.
-- closeButton (boolean): Determines whether the close button is displayed. Default is true.
+- closeButton (boolean): Determines whether the close button should be displayed. Default is true.
+- closeButtonX (boolean): Determines whether the x close button should be displayed. Default is true.
 
-## CSS
+## Customizing Styles
 
-You can customize the appearance of the modal by modifying the CSS file. Here is an example of the default CSS:
+You can customize the appearance of the modal by overriding the default styles in your own CSS file. Here are the default class names you can target:
+
+- `.modal__overlay`: Styles the overlay background.
+- `.modal__content`: Styles the modal container.
+- `.modal__close-btn`: Styles the close button at the bottom (the cta).
+- `.modal__close-btn-x`: Styles the close button in the top right corner (the x).
+
+## Styling example
 
 ```css
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body .modal__overlay {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
-.modal {
-  background: white;
+body .modal__content {
   padding: 20px;
-  border-radius: 5px;
-  max-width: 500px;
-  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.modal-close-btn {
-  margin-top: 10px;
-}
-
-.modal-close-btn-top-right {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: black;
+body .modal__close-btn {
+  background-color: #5e6f21;
   color: white;
-  border: none;
-  border-radius: 50%;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+body .modal__close-btn-x {
+  background-color: #5e6f21;
+  color: white;
   width: 30px;
   height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  border-radius: 50%;
   font-size: 20px;
 }
 ```

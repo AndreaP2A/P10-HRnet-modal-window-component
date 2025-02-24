@@ -1,40 +1,42 @@
-.modal-overlay {
+:root {
+  --modal-overlay-bg: rgba(0, 0, 0, 0.5);
+  --modal-content-bg: white;
+  --modal-close-btn-bg: black;
+  --modal-close-btn-color: white;
+}
+
+.modal__overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background-color: var(--modal-overlay-bg);
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 
-.modal {
-  background: white;
-  padding: 20px;
-  border-radius: 5px;
-  max-width: 500px;
-  width: 100%;
+.modal__content {
+  background-color: var(--modal-content-bg);
+  position: relative;
 }
 
-.modal-close-btn {
-  margin-top: 10px;
+.modal__close-btn {
+  background-color: var(--modal-close-btn-bg);
+  color: var(--modal-close-btn-color);
+  border: none;
+  cursor: pointer;
 }
 
-.modal-close-btn-x {
+.modal__close-btn:hover,
+.modal__close-btn-x {
+  background-color: var(--modal-close-btn-hover-bg);
+}
+
+.modal__close-btn-x {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: black;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-size: 20px;
 }

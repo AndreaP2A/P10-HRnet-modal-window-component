@@ -1,6 +1,6 @@
 {
   "name": "modal-window-ap2a",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "private": false,
   "type": "module",
   "main": "index.jsx",
